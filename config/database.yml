@@ -26,6 +26,9 @@ development:
   database: backend_development
   username: test5
   password: test5
+  host: localhost
+  port: 5432
+
 
 
   # The specified database role being used to connect to postgres.
@@ -90,3 +93,4 @@ production:
   database: backend_production
   username: test5
   password: test5
+  url: <%= ENV['DBURI'] %>

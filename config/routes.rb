@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resource :users, only: [:create]
+  # login route
+  post "/login", to: "users#login"
+  # test login route
+  get "/auto_login", to: "users#auto_login"
 end
+
+# post "/url_point", to: controller#function
