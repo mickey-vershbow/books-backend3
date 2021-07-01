@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
 
 #  this macro tells rails to run the authorized funcion before completing any request to the API. (why, to make sure they are logged in before they use the API)
 
-    before_action :authorized
+    # before_action :authorized
 
 # this method takes in a payload (a hash of key/values you want to save in the token) and assigns a token using a secret key. (in production this should an ENV variable.)
   def encode_token(payload)
