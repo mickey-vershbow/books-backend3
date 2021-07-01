@@ -178,7 +178,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   faraday
-  figaro (~> 1.1, >= 1.1.1)
+  figaro
   jwt
   listen (~> 3.3)
   pg (~> 1.1)

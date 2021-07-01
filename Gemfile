@@ -18,7 +18,8 @@ gem 'jwt'
 # third-party API integration
 gem 'faraday'
 # Environmental Variables
-gem 'figaro', '~> 1.1', '>= 1.1.1'
+# gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'figaro'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production

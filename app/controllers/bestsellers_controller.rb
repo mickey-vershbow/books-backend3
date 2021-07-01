@@ -1,8 +1,10 @@
 class BestsellersController < ApplicationController
-    
-def current_list
-    @response = Faraday.get "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=7FxA5tYHL2GPOCHfddNn3uVDouwtx71d"
 
+require 'faraday'
+
+def current_list
+    url = ENV["NYT_API_KEY"]
+    @response = Faraday.get(url)
     response.status
 
     render json: @response
