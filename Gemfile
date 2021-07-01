@@ -11,10 +11,14 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 # Use bcrypt for hashing passwords
 gem 'bcrypt', '~> 3.1.7'
-# manage CORS 
+# manage CORS
 gem 'rack-cors'
 # json-web-token user authentication
 gem 'jwt'
+# third-party API integration
+gem 'faraday'
+# Environmental Variables
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production

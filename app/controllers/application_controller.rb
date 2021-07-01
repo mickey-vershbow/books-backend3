@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
     request.headers['Authorization']
   end
 
-#   If the auth header is present this function parses the string for the token and verified it and pulls out the payload (the hash we stored in the token when we created it). If verification fails it will return nil.
+#   If the auth header is present this function parses the string for the token and verifies it and pulls out the payload (the hash we stored in the token when we created it). If verification fails it will return nil.
   def decoded_token
     if auth_header
       token = auth_header.split(' ')[1]

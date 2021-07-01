@@ -90,4 +90,5 @@ test:
 #
 production:
   <<: *default
+  # Look for url in Heroku config vars
   url: <%= ENV['DATABASE_URL'] %>
