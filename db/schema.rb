@@ -16,11 +16,20 @@ ActiveRecord::Schema.define(version: 2021_06_28_010636) do
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
+    t.string "list_name"
+    t.string "updated"
+    t.string "bestsellers_date"
+    t.integer "rank"
+    t.integer "rank_last_week"
+    t.integer "weeks_on_list"
     t.string "title"
-    t.text "description"
     t.string "author"
     t.string "publisher"
-    t.string "amazon_product_url"
+    t.string "published_date"
+    t.text "description"
+    t.string "book_image"
+    t.string "name"
+    t.string "url"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
