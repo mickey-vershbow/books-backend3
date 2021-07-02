@@ -90,3 +90,5 @@ production:
   <<: *default
   # Look for url in Heroku config vars
   url: <%= ENV['DATABASE_URL'] %>
+  NYT_API_KEY: "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=7FxA5tYHL2GPOCHfddNn3uVDouwtx71d"
+  NYT_SECRET: "39IrxMxSmLvD97T2"

@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 2021_06_28_010636) do
     t.integer "rank"
     t.integer "rank_last_week"
     t.integer "weeks_on_list"
-    t.string "title"
-    t.string "author"
     t.string "publisher"
     t.string "published_date"
+    t.string "title"
+    t.string "author"
     t.text "description"
     t.string "book_image"
+    # name of online retailer, and connected url
     t.string "name"
     t.string "url"
     t.bigint "user_id", null: false
