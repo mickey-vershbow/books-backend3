@@ -2,22 +2,19 @@ class BestsellersController < ApplicationController
 
     require 'faraday'
 
-    def current_list
-        url = ENV["NYT_API_KEY"]
-        response = Faraday.get(url)
-        @response_result = JSON.parse(response.body)
+        def current_list
+            url = ENV["NYT_API_KEY"]
+            response = Faraday.get(url)
+            @response_result = JSON.parse(response.body, { object_class: OpenStruct })
 
-        @books_array = []
+            @books_array = @response_result.results.books.map do |book|
+                container = {}
 
-        @response_result.results.books.map do |book|
-            @container = {}
+                container.rank = book.rank
+                container.rank_last_week = book.rank_last_week
 
-        @container.rank = book.rank
-        @container.rank_last_week = book.rank_last_week
-
-        @books_array.push(container)
-        p @books_array
-        end
-        render json: @response_result
+                return container
+            end
+        render json: @books_array
     end
 end
