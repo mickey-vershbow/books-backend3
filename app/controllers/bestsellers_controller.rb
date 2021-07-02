@@ -5,16 +5,20 @@ class BestsellersController < ApplicationController
         def current_list
             url = ENV["NYT_API_KEY"]
             response = Faraday.get(url)
+            # object class makes the data accessible
             @response_result = JSON.parse(response.body, { object_class: OpenStruct })
 
-            @books_array = @response_result.results.books.map do |book|
+            books_array = []
+
+            @response_result.results.books.map do |book|
                 container = {}
 
-                container.rank = book.rank
-                container.rank_last_week = book.rank_last_week
+                # [:rank] specifies that it's the key of the hash. Ruby way of accessing an object
+                container[:rank] = book[:rank]
+                container[:title] = book[:title]
 
-                return container
-            end
-        render json: @books_array
+            books_array.push(container)
+        end
+        render json: books_array
     end
 end
