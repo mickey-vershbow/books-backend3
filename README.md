@@ -1,24 +1,32 @@
-# README
+# Books On Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple web application that displays NYTimes Bestseller Book data using the NYTimes API.
 
-Things you may want to cover:
+[Live Link](https://booksonrails1.netlify.app/)
+[Backend Code](https://github.com/mickey-vershbow/books_frontend2.git)
+[Frontend Code](https://github.com/mickey-vershbow/books_backend.git)
 
-* Ruby version
+# Technologies Used
 
-* System dependencies
+- Ruby on Rails
+- React.js
+- Node.js
+- Faraday Gem
+- Figaro Gem
+- NYTimes API
+- HTML5
+- CSS3
+- SCSS
+- Google Fonts
+- React-Bootstrap
 
-* Configuration
+# Getting Started
 
-* Database creation
+[Click Here](https://booksonrails1.netlify.app/) to see the deployed app!
 
-* Database initialization
 
-* How to run the test suite
+# Future Enhancements
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- The ability to save books to user collection.
+- The ability to enter a date to see lists from previous weeks.
+- Enhanced user navigation and styling. 
