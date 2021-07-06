@@ -29,8 +29,6 @@ development:
   host: localhost
   port: 5432
 
-
-
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -65,7 +63,6 @@ test:
   <<: *default
   database: backend_test
 
-
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -90,5 +87,5 @@ production:
   <<: *default
   # Look for url in Heroku config vars
   url: <%= ENV['DATABASE_URL'] %>
-  NYT_API_KEY: "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=7FxA5tYHL2GPOCHfddNn3uVDouwtx71d"
+  NYT_API_KEY: 7FxA5tYHL2GPOCHfddNn3uVDouwtx71d
   NYT_SECRET: "39IrxMxSmLvD97T2"

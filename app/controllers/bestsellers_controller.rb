@@ -27,7 +27,7 @@ class BestsellersController < ApplicationController
     end
 
             def previous_list
-            date = "2017-05-27"
+            date = "2017-05-27" 
             previous_url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
             response = Faraday.get(previous_url)
             @response_result = JSON.parse(response.body, { object_class: OpenStruct })
