@@ -26,10 +26,10 @@ class BestsellersController < ApplicationController
             render json: @final_result
     end
 
-            def previous_list
+        def search_list
             date = "2017-05-27"
-            previous_url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
-            response = Faraday.get(previous_url)
+            search_url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
+            response = Faraday.get(search_url)
             @response_result = JSON.parse(response.body, { object_class: OpenStruct })
 
             @final_result = @response_result.results.books.map do |book|

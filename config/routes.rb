@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # nytimes api get route for current list
   get "/bestsellers", to: "bestsellers#current_list"
     # nytimes api get route for list from previous date
-  get "/bestsellers/previous", to: "bestsellers#previous_list"
+  get "/bestsellers/search", to: "bestsellers#search_list"
   # login route
   post "/login", to: "users#login"
   # test login route
