@@ -6,6 +6,10 @@ A simple web application that displays NYTimes Bestseller Book data using the NY
 [Backend Code](https://github.com/mickey-vershbow/books_frontend2.git)
 [Frontend Code](https://github.com/mickey-vershbow/books_backend.git)
 
+# Screenshots
+
+# Wireframes
+
 # Technologies Used
 
 - Ruby on Rails
@@ -29,4 +33,4 @@ A simple web application that displays NYTimes Bestseller Book data using the NY
 
 - The ability to save books to user collection.
 - The ability to enter a date to see lists from previous weeks.
-- Enhanced user navigation and styling. 
+- Enhanced user navigation and styling.

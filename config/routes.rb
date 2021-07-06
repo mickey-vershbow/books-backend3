@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :books
   resource :users, only: [:create]
 
-  # nytimes api get route
+  # nytimes api get route for current list
   get "/bestsellers", to: "bestsellers#current_list"
+    # nytimes api get route for list from previous date
+  get "/bestsellers/previous", to: "bestsellers#previous_list"
   # login route
   post "/login", to: "users#login"
   # test login route
