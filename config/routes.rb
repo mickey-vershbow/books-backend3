@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   # nytimes api get route for current list date properties
   get "/bestsellers/date", to: "bestsellers#display_current_list_date"
 
-  # get route for :date properties from previous date
-  get "/bestsellers/:date", to: "bestsellers#display_archive_list_date"
-
   # nytimes api get route for books list from previous date
   get "/bestsellers/:date", to: "bestsellers#date_search"
+
+  # get route for :date properties from previous date
+  # get "/bestsellers/:date", to: "bestsellers#display_archive_list_date"
+
 
   # login route
   post "/login", to: "users#login"
