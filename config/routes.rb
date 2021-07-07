@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/bestsellers/:date", to: "bestsellers#display_archive_list_date"
 
   # nytimes api get route for books list from previous date
-  get "/bestsellers/:date", to: "bestsellers#search_list"
+  get "/bestsellers/:date", to: "bestsellers#date_search"
 
   # login route
   post "/login", to: "users#login"
