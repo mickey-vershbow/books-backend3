@@ -49,4 +49,13 @@ class BestsellersController < ApplicationController
             render json: @final_result
     end
 
+    def display_current_list_date
+            url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=#{API_KEY}"
+            response = Faraday.get(url)
+            @response_result = JSON.parse(response.body, { object_class: OpenStruct })
+
+            @final_result = @response_result.results
+
+            render json: @final_result
+    end
 end
