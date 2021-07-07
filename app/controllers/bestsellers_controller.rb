@@ -60,6 +60,16 @@ class BestsellersController < ApplicationController
     end
 
     def display_archive_list_date
+        date = params["date"]
+        p date
+        url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
+        p url
+        response = Faraday.get(url)
+        @response_result = JSON.parse(response.body, { object_class: OpenStruct })
+
+        @final_result = @response_result.results
+
+        render json: @final_result
     end
 
 end
