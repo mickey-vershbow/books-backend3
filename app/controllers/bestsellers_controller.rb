@@ -59,7 +59,7 @@ class BestsellersController < ApplicationController
             render json: @final_result
     end
 
-    def display_archive_list_date
+    def display_list_date
         date = params["date"]
         p date
         url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
