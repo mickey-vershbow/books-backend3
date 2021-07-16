@@ -4,6 +4,9 @@ class BestsellersController < ApplicationController
     require 'faraday'
     API_KEY = ENV["NYT_API_KEY"]
 
+    # ----------------------------------
+    # FETCH FOR CURRENT BESTSELLER LIST
+    # ----------------------------------
         def current_list
             current_url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=#{API_KEY}"
             response = Faraday.get(current_url)
@@ -24,8 +27,11 @@ class BestsellersController < ApplicationController
                 }
             end
             render json: @final_result
-    end
+        end
 
+    # ----------------------------------
+    # FETCH FOR BESTSELLER LIST BY DATE
+    # ----------------------------------
         def date_search
             date = params["date"]
             search_url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
@@ -47,29 +53,41 @@ class BestsellersController < ApplicationController
                 }
             end
             render json: @final_result
-    end
+        end
 
-    def display_current_list_date
-            url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=#{API_KEY}"
+    # ----------------------------------
+    # FETCH FOR CURRENT LIST DATE SPECS
+    # ----------------------------------
+        def display_current_list_date
+                url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=#{API_KEY}"
+                response = Faraday.get(url)
+                @response_result = JSON.parse(response.body, { object_class: OpenStruct })
+
+                @final_result = @response_result.results
+
+                render json: @final_result
+        end
+
+    # ----------------------------------
+    # FETCH FOR DATE SPECS BY LIST SEARCH
+    # ----------------------------------
+        def display_archive_list_date
+            date = params["date"]
+            p date
+            url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
+            p url
             response = Faraday.get(url)
             @response_result = JSON.parse(response.body, { object_class: OpenStruct })
 
             @final_result = @response_result.results
 
             render json: @final_result
-    end
+        end
 
-    def display_archive_list_date
-        date = params["date"]
-        p date
-        url = "https://api.nytimes.com/svc/books/v3/lists/#{date}/hardcover-fiction.json?api-key=#{API_KEY}"
-        p url
-        response = Faraday.get(url)
-        @response_result = JSON.parse(response.body, { object_class: OpenStruct })
+    # ----------------------------------
+    # FETCH FOR BESTSELLER/:ID (SHOW PAGE)
+    # ----------------------------------
 
-        @final_result = @response_result.results
-
-        render json: @final_result
-    end
+    
 
 end
