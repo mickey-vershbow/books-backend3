@@ -15,18 +15,15 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  host: db
-  username: postgres
-  password: password
-  pool: 5
+ adapter: postgresql
+ encoding: unicode
+ host: db
+ username: postgres
+ password: 
 
 development:
   <<: *default
   database: backend_development
-  username: test5
-  password: test5
   host: localhost
   port: 5432
 

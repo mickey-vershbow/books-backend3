@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   # nytimes api get route for current list date properties
   get "/bestsellers/date/current", to: "bestsellers#display_current_list_date"
 
-  get "/bestsellers/:rank", to: "bestsellers#"
 
   # ----------------------------------------------
   # nytimes api get route for books list from previous date

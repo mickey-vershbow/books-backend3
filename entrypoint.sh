@@ -1,9 +1,8 @@
 #!/bin/bash
-
-# Rails-specific issue, deletes a pre-existing server, if it exists
-
 set -e
 
-rm -f /booksOnRails/backend/tmp/pids/server.pid
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /backend/tmp/pids/server.pid
 
+# Then exec the container's main process (what's set as CMD in the Dockerfile).
 exec "$@"

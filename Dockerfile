@@ -1,11 +1,10 @@
 # syntax=docker/dockerfile:1
 FROM ruby:3.0.1
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-WORKDIR /booksOnRails/backend
-COPY Gemfile /booksOnRails/backend/Gemfile
-COPY Gemfile.lock /booksOnRails/backend/Gemfile.lock
+WORKDIR /backend
+COPY Gemfile /backend/Gemfile
+COPY Gemfile.lock /backend/Gemfile.lock
 RUN bundle install
-COPY . /booksOnRails/backend
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
