@@ -15,6 +15,7 @@ A simple web application that displays NYTimes Bestseller Book data using the NY
 - Ruby on Rails
 - React.js
 - Node.js
+- Docker / Docker-Compose
 - Faraday Gem
 - Figaro Gem
 - NYTimes API
@@ -23,6 +24,7 @@ A simple web application that displays NYTimes Bestseller Book data using the NY
 - SCSS
 - Google Fonts
 - React-Bootstrap
+- Date FNS
 
 # Getting Started
 
@@ -31,6 +33,6 @@ A simple web application that displays NYTimes Bestseller Book data using the NY
 
 # Future Enhancements
 
-- The ability to save books to user collection.
-- The ability to enter a date to see lists from previous weeks.
+- Links to purchase each book.
+- Links to reviews of each book.
 - Enhanced user navigation and styling.
