@@ -30,6 +30,7 @@ A simple web application that displays NYTimes Bestseller Book data using the NY
 
 [Click Here](https://booksonrails1.netlify.app/) to see the deployed app!
 
+Rails S to run the server
 
 # Future Enhancements
 
