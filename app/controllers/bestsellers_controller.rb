@@ -49,7 +49,8 @@ class BestsellersController < ApplicationController
                     title: book[:title],
                     author: book[:author],
                     book_image: book[:book_image],
-                    # TODO: add buy_links
+                    amazon_product_url: book[:amazon_product_url],
+                    buy_links: book[:buy_links]
                 }
             end
             render json: @final_result
@@ -83,11 +84,5 @@ class BestsellersController < ApplicationController
 
             render json: @final_result
         end
-
-    # ----------------------------------
-    # FETCH FOR BESTSELLER/:ID (SHOW PAGE)
-    # ----------------------------------
-
-    
 
 end

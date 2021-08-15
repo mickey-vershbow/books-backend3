@@ -1,3 +1,6 @@
+# CRUD functionality for user's books collection
+
+
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :update, :destroy]
   # can't hit these routes without authorization
