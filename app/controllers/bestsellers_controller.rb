@@ -4,6 +4,8 @@ class BestsellersController < ApplicationController
     require 'faraday'
     API_KEY = ENV["NYT_API_KEY"]
 
+
+
     # ----------------------------------
     # FETCH FOR CURRENT BESTSELLER LIST
     # ----------------------------------
