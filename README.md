@@ -3,7 +3,6 @@
 A simple web application that displays NYTimes Bestseller Book data using the NYTimes API.
 
 [Live Link](https://booksonrails1.netlify.app/)
-[Backend Code](https://github.com/mickey-vershbow/books_frontend2.git)
 [Frontend Code](https://github.com/mickey-vershbow/books_backend.git)
 
 # Screenshots
